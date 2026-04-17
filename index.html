@@ -1,1 +1,138 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Expense Splitter Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo">💸 Splitter Pro</div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#history">History</a>
+        <a href="#footer">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+        <button onclick="resetApp()" title="Reset Data">🗑</button>
+        <button id="themeBtn" title="Toggle Theme">🌙</button>
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Manage Shared Expenses Smartly</h1>
+    <p>Split bills, track balances, and get AI insights instantly.</p>
+</section>
+
+
+<!-- MAIN -->
+<main class="container" id="dashboard">
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <h3>Total Members</h3>
+            <p id="totalMembers">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Expenses</h3>
+            <p id="totalExpenses">₹0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Entries</h3>
+            <p id="totalEntries">0</p>
+        </div>
+
+    </section>
+
+
+    <!-- GRID -->
+    <section class="grid">
+
+        <!-- ADD MEMBER -->
+        <div class="card">
+            <h2>Add Member</h2>
+
+            <div class="row">
+                <input type="text" id="memberInput" placeholder="Enter member name">
+                <button onclick="addMember()">Add</button>
+            </div>
+
+            <ul id="memberList"></ul>
+        </div>
+
+
+        <!-- ADD EXPENSE -->
+        <div class="card">
+            <h2>Add Expense</h2>
+
+            <input type="text" id="descInput" placeholder="Expense description">
+            <input type="number" id="amountInput" placeholder="Amount">
+
+            <select id="payerSelect"></select>
+
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+
+
+        <!-- BALANCES -->
+        <div class="card">
+            <h2>Who Owes Whom</h2>
+            <ul id="balanceList"></ul>
+        </div>
+
+
+        <!-- HISTORY -->
+        <div class="card" id="history">
+            <h2>Expense History</h2>
+            <ul id="historyList"></ul>
+        </div>
+
+
+        <!-- AI INSIGHTS -->
+        <div class="card">
+            <div id="aiInsights">
+                <h2>🤖 AI Insights</h2>
+                <p>No insights yet</p>
+            </div>
+        </div>
+
+
+        <!-- CHART -->
+        <div class="card">
+            <h2>📊 Spending Analytics</h2>
+            <canvas id="expenseChart"></canvas>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+    <p>© 2026 Smart Expense Splitter • Built for Innovation</p>
+</footer>
+
+
+<!-- CHART JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- MAIN JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
